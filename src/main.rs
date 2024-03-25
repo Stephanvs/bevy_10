@@ -20,7 +20,7 @@ fn spawn_cubes(
     mut commands: Commands,
     mut mesh_assets: ResMut<Assets<Mesh>>,
 ) {
-    let mesh = mesh_assets.add(shape::Box::new(1., 1., 1.).into());
+    let mesh = mesh_assets.add(Cuboid::new(1., 1., 1.));
     for x in -10..10 {
         for z in -10..10 {
             commands.spawn(PbrBundle {
